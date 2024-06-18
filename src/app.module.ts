@@ -1,10 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductModule } from './modules/products/product.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AccountModule } from './modules/account/account.module';
-import { Account } from './entity/account.entity';
+import { DiplomaModule } from './modules/diplomas/diplomas.module';
+import { ExpereModule } from './modules/expereferences/experefen.module';
+import { ExperencesModule } from './modules/experiences/experiences.module';
+import { InfoModule } from './modules/infos/infos.module';
+import { ServiceModule } from './modules/services/services.module';
+import { SkillModule } from './modules/skills/skills.module';
+import { StudieModule } from './modules/studies/studies.module';
 
 @Module({
   imports: [
@@ -14,12 +19,18 @@ import { Account } from './entity/account.entity';
       port: 3306,
       username: 'root',
       password: '123456',
-      database: 'demo_nestjs',
-      entities: [Account],
+      database: 'web_profile',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    ProductModule,
     AccountModule,
+    DiplomaModule,
+    ExpereModule,
+    ExperencesModule,
+    InfoModule,
+    ServiceModule,
+    SkillModule,
+    StudieModule,
   ],
   controllers: [AppController],
   providers: [AppService],
