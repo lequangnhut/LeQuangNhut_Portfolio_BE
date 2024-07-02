@@ -32,9 +32,9 @@ export class AccountRepository {
     return this.accountRepository.save(account);
   }
 
-  async delete(id: number): Promise<Boolean> {
+  async delete(id: number): Promise<boolean> {
     const account = this.findById(id);
-    this.accountRepository.delete(await account);
+    await this.accountRepository.delete(await account);
     return true;
   }
 }

@@ -60,8 +60,8 @@ export class AccountController {
   }
 
   @Delete('/delete-account/:id')
-  async deleteAccount(@Param('id') id: number): Promise<ResponseData<Boolean>> {
-    return new ResponseData<Boolean>(
+  async deleteAccount(@Param('id') id: number): Promise<ResponseData<boolean>> {
+    return new ResponseData<boolean>(
       await this.accountService.deleteAccount(id),
       HttpStatus.SUCCESS,
       HttpMessage.SUCCESS,

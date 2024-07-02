@@ -7,6 +7,10 @@ import { Repository } from 'typeorm';
 export class DiplomaRepository {
   constructor(
     @InjectRepository(Diplomas)
-    private readonly diploma: Repository<Diplomas>,
+    private readonly diplomas: Repository<Diplomas>,
   ) {}
+
+  async findAll(): Promise<Diplomas[]> {
+    return this.diplomas.find();
+  }
 }
