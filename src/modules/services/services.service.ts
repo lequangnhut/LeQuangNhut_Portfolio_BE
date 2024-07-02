@@ -1,4 +1,4 @@
-import { ServiceRepository } from './../../repository/services.repository';
+import { ServiceRepository } from '../../repository/services.repository';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

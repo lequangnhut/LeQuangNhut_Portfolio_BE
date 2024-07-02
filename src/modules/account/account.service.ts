@@ -22,7 +22,7 @@ export class AccountService {
     return this.accountRepository.update(id, account);
   }
 
-  async deleteAccount(id: number): Promise<Boolean> {
+  async deleteAccount(id: number): Promise<boolean> {
     return this.accountRepository.delete(id);
   }
 }

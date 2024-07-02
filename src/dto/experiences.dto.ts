@@ -3,7 +3,7 @@ export class ExperienceDto {
 
   title: string;
 
-  desriptions: string;
+  description: string;
 
   times: Date;
 

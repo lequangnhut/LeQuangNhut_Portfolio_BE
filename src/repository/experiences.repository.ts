@@ -1,5 +1,5 @@
 import { InjectRepository } from '@nestjs/typeorm';
-import { Experiences } from './../entity/experiences.entity';
+import { Experiences } from '../entity/experiences.entity';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

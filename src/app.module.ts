@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AccountModule } from './modules/account/account.module';
 import { DiplomaModule } from './modules/diplomas/diplomas.module';
@@ -10,6 +8,14 @@ import { InfoModule } from './modules/infos/infos.module';
 import { ServiceModule } from './modules/services/services.module';
 import { SkillModule } from './modules/skills/skills.module';
 import { StudieModule } from './modules/studies/studies.module';
+import { Infos } from './entity/infos.entity';
+import { Account } from './entity/account.entity';
+import { Diplomas } from './entity/diplomas.entity';
+import { Expe_references } from './entity/expe_references.entity';
+import { Experiences } from './entity/experiences.entity';
+import { Services } from './entity/services.entity';
+import { Skills } from './entity/skills.entity';
+import { Studies } from './entity/studies.entity';
 
 @Module({
   imports: [
@@ -20,7 +26,16 @@ import { StudieModule } from './modules/studies/studies.module';
       username: 'root',
       password: '123456',
       database: 'web_profile',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [
+        Account,
+        Diplomas,
+        Expe_references,
+        Experiences,
+        Infos,
+        Services,
+        Skills,
+        Studies,
+      ],
       synchronize: true,
     }),
     AccountModule,
@@ -32,7 +47,5 @@ import { StudieModule } from './modules/studies/studies.module';
     SkillModule,
     StudieModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

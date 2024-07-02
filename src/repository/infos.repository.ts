@@ -7,6 +7,10 @@ import { Repository } from 'typeorm';
 export class InfoRepository {
   constructor(
     @InjectRepository(Infos)
-    private readonly info: Repository<Infos>,
+    private readonly infos: Repository<Infos>,
   ) {}
+
+  async getAll(): Promise<Infos[]> {
+    return this.infos.find();
+  }
 }

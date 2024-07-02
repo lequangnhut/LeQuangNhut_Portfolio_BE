@@ -1,4 +1,4 @@
-export class StudieDto {
+export class StudiesDto {
   id: number;
 
   schoolName: string;
